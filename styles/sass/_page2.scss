@@ -1,0 +1,209 @@
+/* Card */
+
+body {
+    font-family: "OCR A Std", monospace;
+}
+
+#page2 {
+    .box {
+        width: 800px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        grid-gap: 15px;
+        margin: 10% 40%;
+    }
+    .card {
+        position: relative;
+        width: 400px;
+        height: 550px;
+        background: #fff;
+        margin: -5% auto;
+        border-radius: 4px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
+    }
+    .card:before,
+    .card:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 4px;
+        background: #fff;
+        transition: 0.5s;
+        z-index: -1;
+    }
+    .card:hover:before {
+        transform: rotate(20deg);
+        box-shadow: 0 2px 20px rgba(0, 0, 0, .2);
+    }
+    .card:hover:after {
+        transform: rotate(10deg);
+        box-shadow: 0 2px 20px rgba(0, 0, 0, .2);
+    }
+    .card .imgBx {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        bottom: 10px;
+        right: 10px;
+        background: white;
+        transition: 0.5s;
+        z-index: 1;
+    }
+    .card:hover .imgBx {
+        bottom: 80px;
+    }
+    .card .imgBx img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .card .details {
+        position: absolute;
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+        height: 60px;
+        text-align: center;
+    }
+    .card .details h2 {
+        margin: 0;
+        padding: 0;
+        font-weight: 600;
+        font-size: 20px;
+        color: black;
+        text-transform: uppercase;
+    }
+    .card .details h2 span {
+        font-weight: 500;
+        font-size: 16px;
+        font-family: "OCR A Std", monospace;
+        color: #2bcbba;
+        display: block;
+        margin-top: 5px;
+    }
+    .about {
+        position: absolute;
+        top: 22%;
+        left: 10%;
+        width: 35%;
+        height: auto;
+        font-family: "Lucida Console", Courier, monospace;
+        font-size: 20px;
+        color: black;
+    }
+    .about-length {
+        margin-left: 20%;
+    }
+    .about-data {
+        margin-top: 10%;
+        font-family: "OCR A Std", monospace;
+    }
+    .range-text {
+        display: inline;
+    }
+    /* radio button */
+    .radio-text {
+        font-family: FreeMono, monospace;
+        font-size: 14px;
+        font-variant: small-caps;
+    }
+    .wrap {}
+    input {
+        display: none;
+    }
+    label {
+        cursor: pointer;
+        margin: 10px 10px;
+    }
+    label:before {
+        content: '';
+        display: inline-block;
+        height: 15px;
+        width: 15px;
+        background: $page2_secondary;
+        border-radius: 50%;
+        z-index: 2;
+        transition: box-shadow .4s ease, background .3s ease;
+    }
+    input:checked+label:before {
+        box-shadow: inset 0px 2px 0 2px $page2_secondary;
+        background: #fff;
+    }
+    .page_name {
+        position: absolute;
+        top: 70%;
+        left: 5%;
+        z-index: 5;
+    }
+    @media only screen and (max-width: 500px) {
+        .page_name {
+            display: none;
+        }
+        .box {
+            display: none;
+        }
+        .about {
+            width: 90%;
+        }
+        .about-length {
+            margin-left: 10%;
+        }
+        .about-data {
+            margin: 10% 4%;
+        }
+    }
+    .reflection-container {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        transform-style: preserve-3d;
+        perspective: 1000px;
+        width: 100%;
+        height: 100%;
+        .reflection-content {
+            width: 100%;
+            height: 100%;
+            background: white url('/static/me5.jpeg');
+            background-size: cover;
+            background-position: center;
+            transform: rotateX(0) rotateY(0);
+            pointer-events: none;
+            transition: 100ms linear transform;
+            overflow: hidden;
+            &:before {
+                content: '';
+                position: absolute;
+                width: 200%;
+                height: 200%;
+                left: -50%;
+                top: -50%;
+            }
+        }
+        .reflection-grid-cell {
+            position: absolute;
+            z-index: 1;
+            width: 10%;
+            height: 10%;
+        }
+        @for $r from 1 to 11 {
+            @for $c from 1 to 11 {
+                .reflection-grid-cell-#{( ($r*10) + $c - 10)} {
+                    top: ($r*10%)-10%;
+                    left: ($c*10%)-10%;
+                }
+                .reflection-grid-cell-#{( ($r*10) + $c - 10)}:hover~.reflection-content {
+                    transform: rotateX((($r*-5)+25deg)) rotateY((-25deg+($c*5)));
+                    &:before {
+                        transform: translateY(25-(5%*$r));
+                    }
+                }
+            }
+        }
+    }
+}
