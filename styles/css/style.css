@@ -3412,12 +3412,12 @@ body {
 }
 
 #page5 .projects-table td p {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 #page5 .projects-table td p:last-of-type {
-  color: #738297;
-  font-size: 12px;
+  color: white;
+  font-size: 14px;
 }
 
 #page5 .projects-table th {
