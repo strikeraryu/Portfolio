@@ -2084,9 +2084,9 @@ body {
 }
 
 #page3 .demo-card:nth-child(2) {
-  -webkit-box-ordinal-group: 5;
-      -ms-flex-order: 4;
-          order: 4;
+  -webkit-box-ordinal-group: 6;
+      -ms-flex-order: 5;
+          order: 5;
 }
 
 #page3 .demo-card:nth-child(3) {
@@ -2096,9 +2096,9 @@ body {
 }
 
 #page3 .demo-card:nth-child(4) {
-  -webkit-box-ordinal-group: 6;
-      -ms-flex-order: 5;
-          order: 5;
+  -webkit-box-ordinal-group: 7;
+      -ms-flex-order: 6;
+          order: 6;
 }
 
 #page3 .demo-card:nth-child(5) {
@@ -2108,9 +2108,21 @@ body {
 }
 
 #page3 .demo-card:nth-child(6) {
-  -webkit-box-ordinal-group: 7;
-      -ms-flex-order: 6;
-          order: 6;
+  -webkit-box-ordinal-group: 8;
+      -ms-flex-order: 7;
+          order: 7;
+}
+
+#page3 .demo-card:nth-child(7) {
+  -webkit-box-ordinal-group: 5;
+      -ms-flex-order: 4;
+          order: 4;
+}
+
+#page3 .demo-card:nth-child(8) {
+  -webkit-box-ordinal-group: 9;
+      -ms-flex-order: 8;
+          order: 8;
 }
 
 #page3 * {
@@ -2153,7 +2165,7 @@ body {
         -ms-flex-flow: column wrap;
             flex-flow: column wrap;
     width: 1170px;
-    height: 1200px;
+    height: 1540px;
     margin: 0 auto;
   }
 }
@@ -2338,10 +2350,26 @@ body {
 }
 
 #page3 #timeline .demo-card--step5 {
-  background-color: #46b8e9;
+  background-color: #ff9f43;
 }
 
 #page3 #timeline .demo-card--step5 .head::after {
+  border-color: #ff9f43;
+}
+
+#page3 #timeline .demo-card--step6 {
+  background-color: #ff6b6b;
+}
+
+#page3 #timeline .demo-card--step6 .head::after {
+  border-color: #ff6b6b;
+}
+
+#page3 #timeline .demo-card--step7 {
+  background-color: #46b8e9;
+}
+
+#page3 #timeline .demo-card--step7 .head::after {
   border-color: #46b8e9;
 }
 
@@ -3502,7 +3530,7 @@ body {
 }
 
 #page5 .post-module .thumbnail {
-  background: #000000;
+  background: #f1f2f6;
   height: 400px;
   overflow: hidden;
 }
